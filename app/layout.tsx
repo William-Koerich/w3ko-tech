@@ -20,11 +20,11 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "W3 Tech — Tecnologia que move negócios",
+  title: "W3KO Tech — Tecnologia que move negócios",
   description:
-    "W3 Tech desenvolve sites, sistemas, aplicativos e soluções com Inteligência Artificial para empresas que querem crescer, automatizar processos e transformar ideias em resultados.",
+    "W3KO Tech desenvolve sites, sistemas, aplicativos e soluções com Inteligência Artificial para empresas que querem crescer, automatizar processos e transformar ideias em resultados.",
   keywords: [
-    "W3 Tech",
+    "W3KO Tech",
     "desenvolvimento de sites",
     "sistemas personalizados",
     "aplicativos mobile",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "software house",
   ],
   openGraph: {
-    title: "W3 Tech — Tecnologia que move negócios",
+    title: "W3KO Tech — Tecnologia que move negócios",
     description:
       "Web. Mobile. Intelligence. Soluções digitais sob medida para empresas que querem crescer através da tecnologia.",
     type: "website",

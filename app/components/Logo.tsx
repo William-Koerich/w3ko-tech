@@ -16,7 +16,7 @@ export function LogoMark({ className = "" }: { className?: string }) {
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span className={`font-display font-bold tracking-tight ${className}`}>
-      <span className="text-gradient">W3</span>{" "}
+      <span className="text-gradient">W3KO</span>{" "}
       <span className="text-foreground">TECH</span>
     </span>
   );
