@@ -117,3 +117,12 @@ export function IconCheck({ className }: IconProps) {
     </svg>
   );
 }
+
+export function IconWhatsapp({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M6.5 17.5 4 20l2.6-.7a8.5 8.5 0 1 0-2.9-3.2Z" />
+      <path d="M8.5 9c0-.6.4-1 .9-1h.6c.3 0 .6.2.7.5l.6 1.6a.8.8 0 0 1-.2.9l-.6.5c.5 1.1 1.4 2 2.5 2.5l.5-.6a.8.8 0 0 1 .9-.2l1.6.6c.3.1.5.4.5.7v.6c0 .5-.4.9-1 .9-3 0-6.5-3.5-6.5-6.5Z" />
+    </svg>
+  );
+}

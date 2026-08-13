@@ -12,9 +12,9 @@ import {
   IconFlask,
   IconGlobe,
   IconLayers,
-  IconMail,
   IconSmartphone,
   IconSpark,
+  IconWhatsapp,
 } from "./components/icons";
 
 const SERVICES = [
@@ -129,7 +129,7 @@ export default function Home() {
           </div>
 
           <div className="relative mb-10">
-            <div className="absolute left-1/2 top-1/2 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue/40 via-purple/30 to-transparent blur-3xl" />
+            <div className="absolute left-1/2 top-1/2 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-br from-blue/40 via-purple/30 to-transparent blur-3xl" />
             <div className="relative grid h-28 w-28 place-items-center sm:h-32 sm:w-32">
               <span className="animate-spin-slow absolute inset-0 rounded-full border border-dashed border-blue/40" />
               <span className="animate-spin-reverse absolute inset-2 rounded-full border border-dashed border-purple/40" />
@@ -151,7 +151,7 @@ export default function Home() {
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
             <a
               href="#contato"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue to-purple px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_-8px_rgba(47,107,255,0.7)] transition-transform hover:scale-105"
+              className="group inline-flex items-center gap-2 rounded-full bg-linear-to-r from-blue to-purple px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_-8px_rgba(47,107,255,0.7)] transition-transform hover:scale-105"
             >
               Vamos conversar
               <IconArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -187,7 +187,7 @@ export default function Home() {
             {SERVICES.map((service, i) => (
               <Reveal key={service.title} delay={i * 90}>
                 <SpotlightCard className="group h-full rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-white/20">
-                  <div className="mb-6 grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-blue/20 to-purple/20 text-cyan ring-1 ring-white/10">
+                  <div className="mb-6 grid h-11 w-11 place-items-center rounded-xl bg-linear-to-br from-blue/20 to-purple/20 text-cyan ring-1 ring-white/10">
                     <service.icon className="h-5 w-5" />
                   </div>
                   <p className="font-mono text-xs tracking-[0.2em] text-muted uppercase">{service.tag}</p>
@@ -217,7 +217,7 @@ export default function Home() {
             <div className="mt-16 grid gap-6 md:grid-cols-3">
               {W3_MEANING.map((item, i) => (
                 <Reveal key={item.title} delay={i * 100}>
-                  <div className="relative h-full overflow-hidden rounded-2xl border border-line bg-gradient-to-b from-white/[0.04] to-transparent p-8">
+                  <div className="relative h-full overflow-hidden rounded-2xl border border-line bg-linear-to-b from-white/[0.04] to-transparent p-8">
                     <span className="font-display text-7xl font-bold text-white/[0.06]">
                       {item.letter}
                     </span>
@@ -309,7 +309,7 @@ export default function Home() {
             {ECOSYSTEM.map((item, i) => (
               <Reveal key={item.name} delay={i * 80}>
                 <SpotlightCard className="flex h-full items-start gap-4 rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-white/20">
-                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-blue/20 to-purple/20 text-cyan ring-1 ring-white/10">
+                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-linear-to-br from-blue/20 to-purple/20 text-cyan ring-1 ring-white/10">
                     <item.icon className="h-5 w-5" />
                   </div>
                   <div>
@@ -350,7 +350,7 @@ export default function Home() {
 
         {/* ---------------- CTA ---------------- */}
         <section id="contato" className="relative overflow-hidden px-6 py-28 sm:py-36">
-          <div className="absolute left-1/2 top-1/2 -z-10 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue/25 via-purple/20 to-transparent blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 -z-10 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-br from-blue/25 via-purple/20 to-transparent blur-3xl" />
           <Reveal className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
               Vamos transformar sua ideia em{" "}
@@ -361,11 +361,13 @@ export default function Home() {
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="mailto:contato@w3tech.com.br"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue to-purple px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_-8px_rgba(47,107,255,0.7)] transition-transform hover:scale-105"
+                href="https://wa.me/5547996348990?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20W3%20Tech%20e%20quero%20conversar%20sobre%20um%20projeto."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 rounded-full bg-linear-to-r from-blue to-purple px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_-8px_rgba(47,107,255,0.7)] transition-transform hover:scale-105"
               >
-                <IconMail className="h-4 w-4" />
-                contato@w3tech.com.br
+                <IconWhatsapp className="h-4 w-4" />
+                Chamar no WhatsApp
               </a>
             </div>
           </Reveal>
