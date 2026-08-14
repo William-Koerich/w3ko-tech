@@ -3,7 +3,7 @@ import { Navbar } from "./components/Navbar";
 import { Marquee } from "./components/Marquee";
 import { Reveal } from "./components/Reveal";
 import { SpotlightCard } from "./components/SpotlightCard";
-import { LogoMark, Wordmark } from "./components/Logo";
+import { LogoLockup, LogoSymbol } from "./components/Logo";
 import {
   IconArrowRight,
   IconCheck,
@@ -133,7 +133,10 @@ export default function Home() {
             <div className="relative grid h-28 w-28 place-items-center sm:h-32 sm:w-32">
               <span className="animate-spin-slow absolute inset-0 rounded-full border border-dashed border-blue/40" />
               <span className="animate-spin-reverse absolute inset-2 rounded-full border border-dashed border-purple/40" />
-              <LogoMark className="h-20 w-20 text-4xl shadow-[0_0_60px_-10px_rgba(168,85,247,0.6)] sm:h-24 sm:w-24" />
+              <LogoSymbol
+                className="h-16 drop-shadow-[0_0_45px_rgba(168,85,247,0.55)] sm:h-20"
+                priority
+              />
             </div>
           </div>
 
@@ -377,14 +380,11 @@ export default function Home() {
       {/* ---------------- FOOTER ---------------- */}
       <footer className="relative border-t border-line px-6 py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 sm:flex-row">
-          <div className="flex items-center gap-2.5">
-            <LogoMark className="h-8 w-8 text-xl" />
-            <div>
-              <Wordmark className="text-base" />
-              <p className="font-mono text-[11px] tracking-[0.2em] text-muted uppercase">
-                Tecnologia que move negócios
-              </p>
-            </div>
+          <div className="flex flex-col items-center gap-2 sm:items-start">
+            <LogoLockup className="h-8" />
+            <p className="font-mono text-[11px] tracking-[0.2em] text-muted uppercase">
+              Tecnologia que move negócios
+            </p>
           </div>
 
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted">

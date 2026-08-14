@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { LogoMark, Wordmark } from "./Logo";
+import { LogoLockup } from "./Logo";
 import { IconMenu, IconX } from "./icons";
 
 const LINKS = [
@@ -38,9 +38,8 @@ export function Navbar() {
               : "border-transparent bg-transparent px-4 py-2.5"
           }`}
         >
-          <a href="#top" className="flex items-center gap-2.5">
-            <LogoMark className="h-9 w-9 text-2xl" />
-            <Wordmark className="text-lg" />
+          <a href="#top" className="flex items-center">
+            <LogoLockup className="h-7 sm:h-8" priority />
           </a>
 
           <nav className="hidden items-center gap-8 md:flex">
