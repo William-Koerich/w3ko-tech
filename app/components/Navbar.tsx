@@ -8,7 +8,7 @@ const LINKS = [
   { href: "#solucoes", label: "Soluções" },
   { href: "#metodo", label: "Método" },
   { href: "#ecossistema", label: "Ecossistema" },
-  { href: "#sobre", label: "Sobre" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export function Navbar() {
