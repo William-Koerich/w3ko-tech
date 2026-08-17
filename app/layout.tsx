@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
+import { MobileStickyCTA } from "./components/MobileStickyCTA";
+import { CookieConsent } from "./components/CookieConsent";
+import { SITE_URL } from "./lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,6 +23,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "W3KO Tech — Tecnologia que move negócios",
   description:
     "W3KO Tech desenvolve sites, sistemas, aplicativos e soluções com Inteligência Artificial para empresas que querem crescer, automatizar processos e transformar ideias em resultados.",
@@ -32,13 +36,26 @@ export const metadata: Metadata = {
     "automação",
     "software house",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "W3KO Tech — Tecnologia que move negócios",
     description:
       "Web. Mobile. Intelligence. Soluções digitais sob medida para empresas que querem crescer através da tecnologia.",
     type: "website",
     locale: "pt_BR",
+    url: SITE_URL,
   },
+};
+
+const ORGANIZATION_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "W3KO Tech",
+  url: SITE_URL,
+  description:
+    "Desenvolvimento de sites, sistemas, aplicativos e soluções com Inteligência Artificial.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -55,7 +72,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Script id="js-flag" strategy="beforeInteractive">
           {"document.documentElement.classList.add('js')"}
         </Script>
-        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
+        />
+        {/* Bottom clearance so the mobile sticky CTA never covers the
+            last line of content (e.g. the footer). */}
+        <div className="flex flex-1 flex-col pb-20 md:pb-0">{children}</div>
+        <MobileStickyCTA />
+        <CookieConsent />
       </body>
     </html>
   );
