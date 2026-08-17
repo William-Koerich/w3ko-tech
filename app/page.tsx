@@ -1,17 +1,24 @@
+import Link from "next/link";
 import { BackgroundFX } from "./components/BackgroundFX";
 import { Navbar } from "./components/Navbar";
 import { Marquee } from "./components/Marquee";
 import { Reveal } from "./components/Reveal";
 import { SpotlightCard } from "./components/SpotlightCard";
+import { Faq } from "./components/Faq";
 import { LogoLockup, LogoSymbol } from "./components/Logo";
+import { WHATSAPP_HREF } from "./lib/contact";
 import {
   IconArrowRight,
   IconCheck,
+  IconChat,
+  IconClipboard,
   IconCloud,
   IconCompass,
   IconFlask,
   IconGlobe,
   IconLayers,
+  IconLock,
+  IconRefresh,
   IconSmartphone,
   IconSpark,
   IconWhatsapp,
@@ -110,6 +117,57 @@ const VALUES = [
   { title: "Qualidade", description: "Cada projeto representa a W3KO Tech." },
   { title: "Transparência", description: "Comunicação clara, processos claros, relações claras." },
   { title: "Resultado", description: "Tecnologia precisa gerar impacto real." },
+];
+
+const COMMITMENTS = [
+  {
+    icon: IconChat,
+    title: "Comunicação direta",
+    description: "Você fala com quem desenvolve o seu projeto, sem intermediários.",
+  },
+  {
+    icon: IconClipboard,
+    title: "Escopo e prazo claros",
+    description: "Antes de começar, você sabe exatamente o que vai receber e quando.",
+  },
+  {
+    icon: IconLock,
+    title: "Código e acessos são seus",
+    description: "Entregamos código-fonte, credenciais e documentação completos.",
+  },
+  {
+    icon: IconRefresh,
+    title: "Suporte pós-lançamento",
+    description: "Acompanhamos o projeto no ar e evoluímos junto com o seu negócio.",
+  },
+];
+
+const FAQ_ITEMS = [
+  {
+    question: "Quanto tempo leva para desenvolver meu projeto?",
+    answer:
+      "Depende do escopo e da complexidade. Depois de entendermos o problema, definimos um cronograma claro antes de começar — sem promessas genéricas de prazo.",
+  },
+  {
+    question: "Como funciona o orçamento?",
+    answer:
+      "Cada projeto é orçado sob medida, conforme escopo, prazo e complexidade. Você recebe uma proposta clara antes de qualquer compromisso.",
+  },
+  {
+    question: "Vocês atendem empresas de qualquer tamanho?",
+    answer:
+      "Sim. Desenvolvemos desde sites e sistemas para pequenos negócios até plataformas mais robustas para empresas em crescimento.",
+  },
+  {
+    question: "O que acontece depois que o projeto vai ao ar?",
+    answer:
+      "Acompanhamos o pós-lançamento, damos suporte e ficamos disponíveis para evoluir a solução conforme o seu negócio muda.",
+  },
+  {
+    question: "Preciso já ter tudo definido para começar?",
+    answer:
+      "Não. Entender o problema junto com você faz parte do processo — não é preciso chegar com tudo pronto.",
+  },
 ];
 
 const MARQUEE_ITEMS = ["WEB", "MOBILE", "INTELLIGENCE", "SYSTEMS", "AI", "CLOUD", "AUTOMAÇÃO"];
@@ -262,6 +320,32 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ---------------- COMMITMENTS ---------------- */}
+        <section id="compromisso" className="relative border-y border-line bg-white/[0.015] py-28 sm:py-36">
+          <div className="mx-auto max-w-7xl px-6">
+            <Reveal className="mx-auto max-w-2xl text-center">
+              <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan">Compromisso</span>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+                O que você pode esperar de cada projeto.
+              </h2>
+            </Reveal>
+
+            <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {COMMITMENTS.map((item, i) => (
+                <Reveal key={item.title} delay={i * 90}>
+                  <SpotlightCard className="h-full rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-white/20">
+                    <div className="mb-6 grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-blue/20 to-purple/20 text-cyan ring-1 ring-white/10">
+                      <item.icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="font-display text-base font-semibold">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted">{item.description}</p>
+                  </SpotlightCard>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ---------------- DIFFERENTIATOR / QUOTE ---------------- */}
         <section id="sobre" className="relative border-y border-line bg-white/[0.015] py-28 sm:py-36">
           <div className="mx-auto max-w-4xl px-6 text-center">
@@ -351,6 +435,31 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ---------------- FAQ ---------------- */}
+        <section id="faq" className="mx-auto max-w-7xl px-6 py-28 sm:py-36">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-purple">FAQ</span>
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-5xl">
+              Perguntas frequentes
+            </h2>
+          </Reveal>
+
+          <Faq items={FAQ_ITEMS} />
+
+          <Reveal className="mx-auto mt-10 max-w-2xl text-center" delay={FAQ_ITEMS.length * 60}>
+            <p className="text-sm text-muted">Ainda com dúvidas?</p>
+            <a
+              href={WHATSAPP_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-white/5"
+            >
+              <IconWhatsapp className="h-4 w-4" />
+              Fale com a gente
+            </a>
+          </Reveal>
+        </section>
+
         {/* ---------------- CTA ---------------- */}
         <section id="contato" className="relative overflow-hidden px-6 py-28 sm:py-36">
           <div className="absolute left-1/2 top-1/2 -z-10 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue/25 via-purple/20 to-transparent blur-3xl" />
@@ -364,7 +473,7 @@ export default function Home() {
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="https://wa.me/5547996348990?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20W3KO%20Tech%20e%20quero%20conversar%20sobre%20um%20projeto."
+                href={WHATSAPP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue to-purple px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_-8px_rgba(47,107,255,0.7)] transition-transform hover:scale-105"
@@ -391,7 +500,9 @@ export default function Home() {
             <a href="#solucoes" className="hover:text-foreground">Soluções</a>
             <a href="#metodo" className="hover:text-foreground">Método</a>
             <a href="#ecossistema" className="hover:text-foreground">Ecossistema</a>
+            <a href="#faq" className="hover:text-foreground">FAQ</a>
             <a href="#contato" className="hover:text-foreground">Contato</a>
+            <Link href="/politica-de-privacidade" className="hover:text-foreground">Privacidade</Link>
           </nav>
 
           <p className="font-mono text-xs text-muted">
