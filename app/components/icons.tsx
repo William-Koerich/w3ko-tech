@@ -126,3 +126,48 @@ export function IconWhatsapp({ className }: IconProps) {
     </svg>
   );
 }
+
+export function IconChat({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M4 5.5h16v10H9l-4 3.5v-3.5H4Z" />
+      <path d="M8 9.5h8M8 12.5h5" />
+    </svg>
+  );
+}
+
+export function IconLock({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <rect x="5" y="11" width="14" height="9" rx="2" />
+      <path d="M8 11V7.5a4 4 0 0 1 8 0V11" />
+    </svg>
+  );
+}
+
+export function IconClipboard({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <rect x="6" y="4.5" width="12" height="16" rx="2" />
+      <path d="M9 4.5V3.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" />
+      <path d="M9 11h6M9 15h4" />
+    </svg>
+  );
+}
+
+export function IconRefresh({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M4 12a8 8 0 0 1 14-5.2M20 12a8 8 0 0 1-14 5.2" />
+      <path d="M18 3v4h-4M6 21v-4h4" />
+    </svg>
+  );
+}
+
+export function IconPlus({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  );
+}
